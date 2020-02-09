@@ -22,6 +22,11 @@ products:Product[]=[];
     this.products=this.productService.products.slice();
   }
   onCreateProduct(){
-this.mat.open(AddProductComponent)
+let dialoqum=this.mat.open(AddProductComponent);
+dialoqum.afterClosed().subscribe(
+  resp=>{
+    this.products=this.productService.products.slice();
+  }
+);
   }
 }
