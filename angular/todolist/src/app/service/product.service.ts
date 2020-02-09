@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Product } from '../model/product';
 
 @Injectable({
@@ -6,6 +6,7 @@ import { Product } from '../model/product';
 })
 export class ProductService {
   products:Product[]=[];
+  hadisemiz:EventEmitter<Product>=new EventEmitter();
   constructor() {
 
     let p1=new Product();

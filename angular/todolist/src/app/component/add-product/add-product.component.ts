@@ -19,5 +19,7 @@ onSave(){
   let id=this.productService.products.length+1;
   this.p.id=id;
   this.productService.products.push(this.p);
+  this.productService.hadisemiz.emit(this.p);
+  
 }
 }

@@ -23,10 +23,10 @@ products:Product[]=[];
   }
   onCreateProduct(){
 let dialoqum=this.mat.open(AddProductComponent);
-dialoqum.afterClosed().subscribe(
-  resp=>{
-    this.products=this.productService.products.slice();
-  }
-);
+ this.productService.hadisemiz.subscribe(
+   resp=>{
+     this.products.push(resp);
+   }
+ );
   }
 }
