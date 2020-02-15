@@ -10,6 +10,10 @@
 <label for="image">Product image</label>
 <input id="image" type="text" [(ngModel)]="p.image" class="form-control"/>
 
+
+<label for="date">Product's relase date</label>
+<input id="date" type="number" [(ngModel)]="p.date" class="form-control"/>
+
 <button (click)="onSave()">
     Save
 </button>
