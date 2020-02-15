@@ -17,9 +17,6 @@
             Qiymət
         </th>
         <th>
-            Tarix
-        </th>
-        <th>
             Şəkil
         </th>
 
@@ -34,13 +31,10 @@
             {{p.name}}
         </td>
         <td >
-            {{p.price | currency:'$' }}
+            {{p.price | currency:'CAD' }}
         </td>
         <td >
-            {{p.date | date:'yyyy-MM-dd}}
-        </td>
-        <td >
-            <img [src]="p.image"/>
+            <img [src]="p.image" />
         </td>
     </tr>
 </tbody>
