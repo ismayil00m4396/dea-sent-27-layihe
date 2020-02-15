@@ -22,11 +22,13 @@
         <th>
             Şəkil
         </th>
-
+        <th>
+            Əməliyat
+        </th>
     </tr>
 </thead>
 <tbody>
-    <tr *ngFor="let p of products">
+    <tr *ngFor="let p of products; let counter=index">
         <td >
             {{p.id}}
         </td>
@@ -41,6 +43,17 @@
         </td>
         <td >
             <img [src]="p.image" />
+        </td>
+        <td >
+            <button 
+           mwlConfirmationPopover
+           [popoverTitle]="popoverTitle"
+           [popoverMessage]="popoverMessage"
+           placement="top"
+           (confirm)="onDelete(p,counter,true)"
+           (cancel)="onDelete(p,counter,false)"  
+            class="btn btn-danger">Sil</button>
+            <button (click)="onUpdate(p).counter" class="btn btn-primary">Redaktə</button>
         </td>
     </tr>
 </tbody>

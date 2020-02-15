@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
 import { MatDialog } from '@angular/material';
 import { AddProductComponent } from '../add-product/add-product.component';
+import { splitClasses } from '@angular/compiler';
 
 @Component({
   selector: 'app-admin',
@@ -29,4 +30,12 @@ let dialoqum=this.mat.open(AddProductComponent);
    }
  );
   }
+  onDelete(p:Product,counter:number,status:boolean){
+ if(status==true){
+  this.products.splice(counter,1);
+ }
+  }
+
+  popoverMessage='Silsəniz həmişəlik silinəcək!!!';
+  popoverTitle='Silmək istəyirsiniz???';
 }

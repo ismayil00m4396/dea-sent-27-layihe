@@ -21,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule, MatDialogModule, 
   MatProgressSpinnerModule, MatButtonModule } 
   from '@angular/material';
-   
+  import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,11 @@ import { MatInputModule, MatDialogModule,
     FormsModule,
     BrowserAnimationsModule,
     MatInputModule, MatDialogModule, 
-  MatProgressSpinnerModule, MatButtonModule
+  MatProgressSpinnerModule, MatButtonModule,
+  
+  ConfirmationPopoverModule.forRoot({
+    confirmButtonType:'success', cancelButtonType:'danger', confirmText:'Təsdiq', cancelText:'Ləğv' })
+
   ],
   providers: [ DatePipe],
   bootstrap: [AppComponent],
