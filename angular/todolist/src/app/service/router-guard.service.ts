@@ -7,6 +7,6 @@ import { CanActivate } from '@angular/router';
 export class RouterGuardService implements CanActivate{
   canActivate(){
   
-  };
+  }
   constructor() {}
 }

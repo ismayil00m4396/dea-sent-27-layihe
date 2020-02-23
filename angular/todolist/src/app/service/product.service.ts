@@ -6,6 +6,8 @@ import { Product } from '../model/product';
 })
 export class ProductService {
   products:Product[]=[];
+selectedProduct:Product=null;
+
   hadisemiz:EventEmitter<Product>=new EventEmitter();
   constructor() {
 

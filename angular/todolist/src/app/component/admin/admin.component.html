@@ -44,7 +44,7 @@
         <td >
             <img [src]="p.image" />
         </td>
-        <td >
+        <td>
             <button 
            mwlConfirmationPopover
            [popoverTitle]="popoverTitle"
@@ -53,7 +53,8 @@
            (confirm)="onDelete(p,counter,true)"
            (cancel)="onDelete(p,counter,false)"  
             class="btn btn-danger">Sil</button>
-            <button (click)="onUpdate(p).counter" class="btn btn-primary">Redaktə</button>
+
+            <button (click)="onUpdate(p,counter)" class="btn btn-primary">Redakte</button>
         </td>
     </tr>
 </tbody>

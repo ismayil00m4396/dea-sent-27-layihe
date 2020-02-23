@@ -22,6 +22,7 @@ import { MatInputModule, MatDialogModule,
   MatProgressSpinnerModule, MatButtonModule } 
   from '@angular/material';
   import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
+import { RedakteComponent } from './redakte/redakte.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatInputModule, MatDialogModule,
     AdminComponent,
     ProductsComponent,
     OrdersComponent,
-    AddProductComponent 
+    AddProductComponent,
+    RedakteComponent 
   ],
   imports: [
     BrowserModule,

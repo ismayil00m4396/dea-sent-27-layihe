@@ -3,9 +3,11 @@ import { Product } from 'src/app/model/product';
 import { LoginService } from 'src/app/service/login.service';
 import { Router } from '@angular/router';
 import { ProductService } from 'src/app/service/product.service';
+import { RedakteService } from 'src/app/service/redakte.service';
 import { MatDialog } from '@angular/material';
 import { AddProductComponent } from '../add-product/add-product.component';
 import { splitClasses } from '@angular/compiler';
+import { RedakteComponent } from 'src/app/redakte/redakte.component';
 
 @Component({
   selector: 'app-admin',
@@ -23,6 +25,7 @@ products:Product[]=[];
     this.products=this.productService.products.slice();
   }
   onCreateProduct(){
+    this.productService.selectedProduct=null;
 let dialoqum=this.mat.open(AddProductComponent);
  this.productService.hadisemiz.subscribe(
    resp=>{
@@ -35,6 +38,16 @@ let dialoqum=this.mat.open(AddProductComponent);
   this.products.splice(counter,1);
  }
   }
+  onUpdate(p:Product,counter:number){
+    let dialoqum=this.mat.open(AddProductComponent);
+    this.productService.hadisemiz.subscribe(
+      resp=>{
+        this.products.push(resp);
+      }
+    );
+  
+  }
+
 
   popoverMessage='Silsəniz həmişəlik silinəcək!!!';
   popoverTitle='Silmək istəyirsiniz???';

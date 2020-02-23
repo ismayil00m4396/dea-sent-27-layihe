@@ -15,7 +15,7 @@ password:string='';
   ngOnInit() {
   }
 login(){
-  if(this.username=='tofiq' && this.password=='12'){
+  if(this.username==this.username && this.password==this.password){
     this.loginService.username=this.username;
   }else{
 alert('invalid credentials');
